@@ -1,0 +1,69 @@
+html{
+    overflow-y: scroll;
+}
+
+body {
+    background: #1F1B1B;
+    color: white;
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#head {
+    margin-bottom: 5%;
+}
+
+h1 {
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.btn {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#col-main {
+    padding: 7%;
+}
+
+.container-fluid {
+    background: #1F1B1B;
+}
+
+.col-lg-12 {
+    text-align: center;
+    margin-right: 20px;
+}
+
+.col-md-2 {
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.button-box {
+    text-align: center;
+    margin-top: 3%;
+}
+
+#timer-output {
+    font-size: 40px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+#timer-name {
+    margin-bottom: 5%;
+}
+
+.current-date {
+    font-size: 125%;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.table {
+    margin-top: 1%;
+}
+
+#time-period {
+    margin-top: 7%;
+}

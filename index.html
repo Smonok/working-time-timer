@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--suppress HtmlFormInputWithoutLabel -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Online timer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="model\Report.js"></script>
+    <script src="controller\TimerController.js"></script>
+    <script src="view\TimerView.js"></script>
+    <script src="view\ReportView.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="col-md-12" id="col-main">
+        <div class="row" id="head">
+            <div class="col-lg-12">
+                <h1>Working time accounting</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <input id="timer-name" class="form-control" type="text" placeholder="Timer name">
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <span id="timer-output"></span>
+                <script>printActualTime(0, 0)</script>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <span id="current-date" class="current-date"></span>
+                <script>printCurrentDate()</script>
+                <span id="current-time" class="current-date"></span>
+                <script>printCurrentTime()</script>
+            </div>
+        </div>
+        <div class="row button-box">
+            <div class="col-lg-12">
+                <button onclick="stop();" type="button" class="btn btn-space btn-lg btn-danger">Stop</button>
+                <button onclick="start();" type="button" id="start" class="btn btn-space btn-lg btn-success"
+                        style="display:inline">
+                    Start
+                </button>
+                <button onclick="pause();" type="button" id="pause" class="btn btn-space btn-lg btn-warning"
+                        style="display:none">
+                    Pause
+                </button>
+            </div>
+        </div>
+        <div id="time-period" class="row justify-content-center">
+            <div class="col-lg-3 form-group">
+                <select class="form-control" id="select-time-period" onchange="changeTableBySelect()">
+                    <option value="all-time">All time</option>
+                    <option onclick="change()" value="day">This day</option>
+                    <option value="week">This week</option>
+                    <option value="month">This month</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <table id="report-table" class="table table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Timer name</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Start time</th>
+                        <th scope="col">End time</th>
+                        <th scope="col">Actual time</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td id="name"></td>
+                        <td id="date"></td>
+                        <td id="start-time"></td>
+                        <td id="end-time"></td>
+                        <td id="actual-time"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
